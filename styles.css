@@ -1328,6 +1328,16 @@ img { display: block; max-width: 100%; }
   line-height: 1.5;
 }
 
+.education-primary {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.education-secondary {
+  color: var(--text-muted);
+  font-size: 13.5px;
+}
+
 .stack-item--credential {
   display: flex;
   align-items: center;
