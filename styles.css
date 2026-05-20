@@ -1328,6 +1328,32 @@ img { display: block; max-width: 100%; }
   line-height: 1.5;
 }
 
+.stack-item--credential {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.credential-link {
+  flex-shrink: 0;
+  padding: 4px 9px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--teal-bright);
+  font-size: 11.5px;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.credential-link:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--teal-dim);
+  color: #276f79;
+}
+
 /* ============================================================
    OUTCOMES TABLE
 ============================================================ */
@@ -1619,6 +1645,11 @@ img { display: block; max-width: 100%; }
   .stack-grid { grid-template-columns: 1fr; }
   .stack-group { border-right: none !important; }
   .stack-group:nth-last-child(1) { border-bottom: none; }
+  .stack-item--credential {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+  }
 
   .hero-stats {
     flex-wrap: wrap;
