@@ -1372,56 +1372,44 @@ img { display: block; max-width: 100%; }
 }
 
 /* ============================================================
-   OUTCOMES TABLE
+   LEADERSHIP SNAPSHOT
 ============================================================ */
 .outcomes-table {
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  overflow: hidden;
-  margin-top: 52px;
-  background: var(--bg-card);
-  box-shadow: var(--shadow-sm);
+  display: grid;
+  gap: 12px;
+  margin-top: 44px;
 }
 
 .outcome-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  border-bottom: 1px solid var(--border);
+  grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.1fr);
+  gap: 28px;
+  align-items: start;
+  padding: 22px 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s, background 0.2s;
 }
-.outcome-row:last-child { border-bottom: none; }
+.outcome-row:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border);
+}
 
 .outcome-row-label,
 .outcome-row-value {
-  padding: 18px 24px;
   font-size: 14px;
   line-height: 1.6;
 }
 
-.outcome-row:first-child .outcome-row-label,
-.outcome-row:first-child .outcome-row-value {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  font-weight: 650;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  background: var(--bg-card);
-  padding: 14px 24px;
-}
-
 .outcome-row--data .outcome-row-label {
-  color: var(--text-secondary);
-  border-right: 1px solid var(--border);
+  color: var(--text-primary);
+  font-weight: 650;
 }
 .outcome-row--data .outcome-row-value {
-  color: var(--text-primary);
+  color: var(--text-secondary);
   font-weight: 500;
-  background: rgba(33,123,136,0.04);
-}
-
-.outcome-row--data:hover .outcome-row-label,
-.outcome-row--data:hover .outcome-row-value {
-  background: var(--bg-card);
 }
 
 /* ============================================================
@@ -1597,8 +1585,10 @@ img { display: block; max-width: 100%; }
   .challenges-grid { grid-template-columns: 1fr; }
   .challenge-card--highlight { grid-column: span 1; }
 
-  .outcome-row { grid-template-columns: 1fr; }
-  .outcome-row--data .outcome-row-label { border-right: none; border-bottom: 1px solid var(--border); }
+  .outcome-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
 
   .hero-stats { gap: 0; padding: 20px; }
   .stat { min-width: 100px; padding: 0 12px; }
