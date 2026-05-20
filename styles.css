@@ -1328,6 +1328,12 @@ img { display: block; max-width: 100%; }
   line-height: 1.5;
 }
 
+.education-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
 .education-primary {
   color: var(--text-primary);
   font-weight: 600;
