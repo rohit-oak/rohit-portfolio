@@ -598,6 +598,52 @@ img { display: block; max-width: 100%; }
 }
 
 /* ============================================================
+   BANKING EXPERTISE
+============================================================ */
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.expertise-card {
+  padding: 22px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-sm);
+  transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.expertise-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border);
+  box-shadow: var(--shadow-md);
+}
+
+.expertise-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 650;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.expertise-card p {
+  font-size: 13.75px;
+  color: var(--text-secondary);
+  line-height: 1.62;
+  margin-bottom: 12px;
+}
+
+.expertise-card span {
+  display: inline-flex;
+  color: var(--teal-bright);
+  font-size: 12.5px;
+  font-weight: 650;
+}
+
+/* ============================================================
    TIMELINE
 ============================================================ */
 .timeline {
@@ -847,6 +893,63 @@ img { display: block; max-width: 100%; }
   border-radius: 50%;
   background: var(--teal-mid);
   opacity: 0.75;
+}
+
+.cts-lifecycle {
+  margin: 42px 0 26px;
+}
+
+.lifecycle-flow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.lifecycle-step {
+  padding: 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.lifecycle-step span {
+  display: inline-flex;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--teal-bright);
+  margin-bottom: 10px;
+}
+
+.lifecycle-step strong {
+  display: block;
+  font-size: 14px;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.lifecycle-step p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.case-expansion-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 34px;
+}
+
+.scale-dashboard {
+  margin: 38px 0 16px;
+}
+
+.snapshot-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 650;
+  color: var(--text-primary);
 }
 
 /* ============================================================
@@ -1337,22 +1440,17 @@ img { display: block; max-width: 100%; }
 .stack-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-card);
-  overflow: hidden;
+  gap: 14px;
   margin-top: 52px;
-  background: var(--bg-card);
-  box-shadow: var(--shadow-sm);
 }
 
 .stack-group {
   padding: 28px;
-  border-right: 1px solid var(--border-light);
-  border-bottom: 1px solid var(--border-light);
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-sm);
 }
-.stack-group:nth-child(3n) { border-right: none; }
-.stack-group:nth-last-child(-n+3) { border-bottom: none; }
 
 .stack-group-title {
   font-family: var(--font-mono);
@@ -1631,10 +1729,6 @@ img { display: block; max-width: 100%; }
   .ai-card--wide .ai-tech-tags { flex-direction: row; }
 
   .stack-grid { grid-template-columns: repeat(2, 1fr); }
-  .stack-group:nth-child(2n) { border-right: none; }
-  .stack-group:nth-child(3n) { border-right: 1px solid var(--border); }
-  .stack-group:nth-last-child(-n+2) { border-bottom: none; }
-  .stack-group:nth-last-child(-n+3):not(:nth-last-child(-n+2)) { border-bottom: 1px solid var(--border); }
 
   .challenges-grid { grid-template-columns: 1fr; }
   .challenge-card--highlight { grid-column: span 1; }
@@ -1704,8 +1798,6 @@ img { display: block; max-width: 100%; }
   .ai-grid { grid-template-columns: 1fr; }
   .ai-card--wide { grid-column: span 1; }
   .stack-grid { grid-template-columns: 1fr; }
-  .stack-group { border-right: none !important; }
-  .stack-group:nth-last-child(1) { border-bottom: none; }
   .stack-item--credential {
     align-items: flex-start;
     flex-direction: column;
