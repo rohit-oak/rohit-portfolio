@@ -644,6 +644,44 @@ img { display: block; max-width: 100%; }
 }
 
 /* ============================================================
+   SOLUTIONS & CLIENT LEADERSHIP
+============================================================ */
+.solutions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.solution-card {
+  padding: 22px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-sm);
+  transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.solution-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border);
+  box-shadow: var(--shadow-md);
+}
+
+.solution-title {
+  font-family: var(--font-display);
+  font-size: 15.5px;
+  font-weight: 650;
+  color: var(--text-primary);
+  margin-bottom: 9px;
+}
+
+.solution-card p {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.62;
+}
+
+/* ============================================================
    TIMELINE
 ============================================================ */
 .timeline {
@@ -950,6 +988,47 @@ img { display: block; max-width: 100%; }
   font-size: 20px;
   font-weight: 650;
   color: var(--text-primary);
+}
+
+/* ============================================================
+   PLATFORM GROWTH JOURNEY
+============================================================ */
+.growth-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.growth-step {
+  position: relative;
+  padding: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.growth-step span {
+  display: inline-flex;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--teal-bright);
+  margin-bottom: 12px;
+}
+
+.growth-step strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 650;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.growth-step p {
+  font-size: 13.75px;
+  color: var(--text-secondary);
+  line-height: 1.62;
 }
 
 /* ============================================================
@@ -1559,6 +1638,40 @@ img { display: block; max-width: 100%; }
 }
 
 /* ============================================================
+   CLIENT TRUST
+============================================================ */
+.hire-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.hire-card {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 22px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.hire-card strong {
+  font-family: var(--font-display);
+  font-size: 15.5px;
+  font-weight: 650;
+  color: var(--text-primary);
+  line-height: 1.35;
+}
+
+.hire-card span {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ============================================================
    CONTACT
 ============================================================ */
 .contact {
@@ -1701,6 +1814,15 @@ img { display: block; max-width: 100%; }
 
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
 
+  .expertise-grid,
+  .solutions-grid,
+  .growth-timeline,
+  .lifecycle-flow,
+  .case-expansion-grid,
+  .hire-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .case-study { grid-template-columns: 1fr; }
   .arch-diagram { position: static; }
 
@@ -1784,7 +1906,15 @@ img { display: block; max-width: 100%; }
     margin-bottom: 36px;
   }
 
-  .strengths-grid { grid-template-columns: 1fr; }
+  .expertise-grid,
+  .solutions-grid,
+  .growth-timeline,
+  .lifecycle-flow,
+  .case-expansion-grid,
+  .hire-grid,
+  .strengths-grid {
+    grid-template-columns: 1fr;
+  }
   .orchestration-feature {
     margin-top: 36px;
     padding: 22px;
