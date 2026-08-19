@@ -45,7 +45,7 @@ In `index.html`, search for `oak.rohit@gmail.com` and `+91 9967181489` to update
 Place PNG/WEBP images in `/assets/` and reference them in the `.arch-diagram` section or new sections as needed.
 
 ### Adjust accent colour
-In `styles.css`, change `--teal-bright: #5ec5b8;` and related teal variables.
+In `styles.css`, change `--accent: #1f3a5f;` and related `--accent-*` variables in the `:root` block.
 
 ### Add/remove sections
 Each section is wrapped in `<section class="section" id="...">`. Copy a section block and modify.
@@ -56,8 +56,10 @@ Each section is wrapped in `<section class="section" id="...">`. Copy a section 
 
 | Token | Value |
 |-------|-------|
-| `--bg-base` | `#0c0f0f` |
-| `--teal-bright` | `#5ec5b8` |
-| `--font-display` | Syne (700/800) |
-| `--font-body` | DM Sans |
-| `--font-mono` | DM Mono |
+| `--bg-base` | `#f9f9fc` |
+| `--accent` | `#1f3a5f` (deep navy) |
+| `--accent-dark` | `#142943` (hover states) |
+| `--text-primary` | `#16213a` |
+| `--font-display` | Manrope (600/650/700) |
+| `--font-body` | Inter |
+| `--font-mono` | Inter |

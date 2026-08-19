@@ -499,14 +499,14 @@
   <section class="section section-dark" id="project">
     <div class="container">
       <div class="section-label">Featured Platform</div>
-      <h2 class="section-title">SmartCheque Banking Platform<br />for BFSI</h2>
+      <h2 class="section-title">Mobile Cheque Scanning Application<br />for BFSI</h2>
       <p class="section-sub">
         A mobile-first banking infrastructure platform replacing desktop scanners with intelligent, 
         compliant, real-time cheque processing at branch level.
       </p>
 
       <!-- Case Study Narrative -->
-      <div class="case-study case-study--smartcheque">
+      <div class="case-study case-study--cheque-app">
         <div class="case-col">
           <div class="case-block">
             <div class="case-label">The Problem</div>
@@ -563,7 +563,7 @@
                   </div>
                   <div class="arch-node arch-node--api">
                     <div class="node-icon">🔍</div>
-                    <div class="node-label">Auto-Extract Engine<br/><span class="node-sub">OCR / Crop / Detect</span></div>
+                    <div class="node-label">Auto-Extract Engine<br/><span class="node-sub">Detect / Crop / OCR / ICR</span></div>
                   </div>
                 </div>
               </div>
@@ -725,7 +725,7 @@
     <div class="container">
       <div class="section-label">Platform Growth Journey</div>
       <h2 class="section-title">From early CTS deployment to banking-scale adoption.</h2>
-      <p class="section-sub">SmartCheque matured through client onboarding, institution-specific requirements, production support, release governance, and continuous operational improvement.</p>
+      <p class="section-sub">The mobile cheque scanning application matured through client onboarding, institution-specific requirements, production support, release governance, and continuous operational improvement.</p>
 
       <div class="growth-timeline">
         <div class="growth-step">
@@ -822,7 +822,7 @@
 
       <div class="orchestration-feature">
         <div class="orchestration-content">
-          <div class="ai-card-status">Featured Orchestration Platform</div>
+          <div class="ai-card-status">Personal Project</div>
           <h3 class="orchestration-title">Shopify Multi-Store Shipping Zone Orchestration Platform</h3>
           <p class="orchestration-desc">
             Enterprise operational tooling for synchronizing shipping configurations across multiple Shopify stores. Built as an API-first orchestration system with drift detection, reconciliation workflows, dry-run validation, staged execution, and idempotent behavior for safer operational change management.
@@ -864,12 +864,102 @@
         </a>
       </div>
 
+      <div class="orchestration-feature orchestration-feature--solo">
+        <div class="orchestration-content">
+          <div class="ai-card-status">Personal Project</div>
+          <h3 class="orchestration-title">Klaviyo Bundle Tracker: Automated Marketing Creative Intelligence Pipeline</h3>
+          <p class="orchestration-desc">
+            A marketing team needed to audit roughly 120 Klaviyo email flows across USA, UK, and EU stores to catalog which product bundles appeared in live email creatives. Previously this meant manually clicking through every flow and reading bundle names off images by eye. Built a Python pipeline that pulls live, non-draft flows across multiple market accounts, extracts real creative images from the email HTML, and identifies bundle names through a hybrid local OCR and fuzzy-matching engine, writing results idempotently to Google Sheets.
+          </p>
+          <div class="orchestration-brief">
+            <div>
+              <span class="case-label">Problem</span>
+              <p>Cataloging bundle appearances across ~120 live email flows in three markets was a fully manual, eyes-on-image process with no audit trail.</p>
+            </div>
+            <div>
+              <span class="case-label">Solution</span>
+              <p>Automated flow discovery, image extraction, and a hybrid OCR plus token-set fuzzy matcher with confidence-tiered results and human review escalation for ambiguous cases.</p>
+            </div>
+            <div>
+              <span class="case-label">Impact</span>
+              <p>A free, fully local OCR stack chosen over a paid vision API after benchmarking, idempotent Sheets reporting, and 136 tests including real-image integration benchmarks.</p>
+            </div>
+          </div>
+          <div class="orchestration-points">
+            <span>Bounded-concurrency API pulls</span>
+            <span>Hybrid OCR (PaddleOCR + Tesseract)</span>
+            <span>Token-set fuzzy matching</span>
+            <span>Confidence-tiered triage</span>
+            <span>Idempotent Sheets writes</span>
+            <span>Benchmark-driven validation</span>
+          </div>
+          <div class="orchestration-notes">
+            <ul class="case-list">
+              <li>Benchmarked three OCR approaches, Tesseract, PaddleOCR, and a hybrid confidence pipeline, against real email images before defaulting to a free, fully local stack over a paid vision API, with the accuracy, cost, and speed trade-offs documented explicitly.</li>
+              <li>Root-caused real bugs through direct inspection of raw API and OCR output rather than guesswork, including an undocumented Klaviyo response shape (flow-action status nested under a definition object) and a Unicode normalization ordering bug affecting accented characters.</li>
+              <li>Built a reproducible benchmark harness against real email images with an explicit expected-vs-actual acceptance table, catching a regression-inducing threshold bug that unit tests alone would have missed.</li>
+              <li>Designed a three-way outcome model, confidently found, confidently no bundle, or flagged for review, to eliminate false-positive review-queue noise from decorative images like logos and social icons.</li>
+            </ul>
+          </div>
+          <div class="ai-tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Klaviyo REST API</span>
+            <span class="tech-tag">PaddleOCR</span>
+            <span class="tech-tag">Tesseract</span>
+            <span class="tech-tag">Google Sheets API</span>
+            <span class="tech-tag">SQLite</span>
+            <span class="tech-tag">pytest (136 tests)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="orchestration-feature orchestration-feature--solo">
+        <div class="orchestration-content">
+          <div class="ai-card-status">Personal Project</div>
+          <h3 class="orchestration-title">Shopify Discount Operations Engine</h3>
+          <p class="orchestration-desc">
+            A Python CLI tool for auditing and safely bulk-updating Shopify discount codes through the Admin GraphQL API. The engine discovers all active free-shipping discounts, computes the minimal set of changes needed to enforce a target shipping-destination policy, and applies those changes with dry-run previews, human confirmation gates, retry-safe HTTP transport, and CSV audit reporting. Architected with clean separation of concerns across clients, config, domain models, planning, and execution, with full dependency injection for testability.
+          </p>
+          <div class="orchestration-brief">
+            <div>
+              <span class="case-label">Problem</span>
+              <p>Auditing and bulk-updating active free-shipping discount codes by hand was slow and risked an unsafe, unreviewed change going live.</p>
+            </div>
+            <div>
+              <span class="case-label">Solution</span>
+              <p>A CLI that computes the minimal delta needed to enforce a target policy, then applies it only after a dry-run preview and explicit human confirmation.</p>
+            </div>
+            <div>
+              <span class="case-label">Impact</span>
+              <p>Retry-safe, fault-isolated batch execution with full CSV audit trails and a fully tested, dependency-injected codebase.</p>
+            </div>
+          </div>
+          <div class="orchestration-points">
+            <span>OAuth2 client-credentials auth</span>
+            <span>GraphQL pagination & mapping</span>
+            <span>Delta-based mutation building</span>
+            <span>Fault-isolated batch execution</span>
+            <span>Dry-run / confirm safety workflow</span>
+            <span>Secret-redacted logging</span>
+          </div>
+          <div class="ai-tech-tags">
+            <span class="tech-tag">Python 3.13</span>
+            <span class="tech-tag">requests</span>
+            <span class="tech-tag">Shopify Admin GraphQL API</span>
+            <span class="tech-tag">python-dotenv</span>
+            <span class="tech-tag">pytest</span>
+            <span class="tech-tag">ruff</span>
+            <span class="tech-tag">black</span>
+          </div>
+        </div>
+      </div>
+
       <div class="ai-grid">
 
         <div class="ai-card">
           <div class="ai-card-header">
             <div class="ai-icon">⚡</div>
-            <div class="ai-card-status">Production</div>
+            <div class="ai-card-status">Personal Project</div>
           </div>
           <div class="ai-card-title">Shopify Operations Automation Agent</div>
           <p class="ai-card-desc">n8n workflow agent aggregating daily sales, refunds, and net revenue from Shopify Admin APIs. Delivers decision-ready summaries via email and Google Sheets on a schedule.</p>
@@ -1072,7 +1162,7 @@
         </div>
         <div class="outcome-row outcome-row--data">
           <div class="outcome-row-label">Modern automation and AI-assisted operational workflows</div>
-          <div class="outcome-row-value">Built production n8n agents, Shopify GraphQL orchestration, and Gemini API integrations.</div>
+          <div class="outcome-row-value">Built n8n automation agents, personal Shopify GraphQL tooling, and Gemini API integrations.</div>
         </div>
         <div class="outcome-row outcome-row--data">
           <div class="outcome-row-label">Production-accountable incident leadership</div>
